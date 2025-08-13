@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MS Word Student Trainer – Portfolio</title>
+    <meta name="description" content="Student trainer profile for Microsoft Word – skills, why learn from me, pros & cons, education, and contact." />
+
+    <!-- Single‑file styles: modern, clean, print-friendly, and dark‑mode aware -->
+    <style>
+        :root{
+            --bg: #0b0f14;
+            --panel: #111823;
+            --text: #eaf2ff;
+            --muted: #a8b3c7;
+            --brand: #4da3ff;
+            --brand-2: #7cf5ff;
+            --ok: #28d07a;
+            --warn: #ffc857;
+            --bad: #ef476f;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+        @media (prefers-color-scheme: light){
+            :root{ --bg:#f6f8fb; --panel:#ffffff; --text:#0d1b2a; --muted:#4e5d78; --brand:#2563eb; --brand-2:#06b6d4; }
+        }
+        *{ box-sizing:border-box; }
+        html,body{ height:100%; }
+        body{
+            margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+            background: radial-gradient(1200px 600px at 10% -20%, rgba(77,163,255,.15), transparent 60%),
+            radial-gradient(1200px 600px at 110% 0%, rgba(124,245,255,.12), transparent 60%),
+            var(--bg);
+            color:var(--text);
+        }
+        .container{ max-width:1000px; margin:0 auto; padding:24px; }
+
+        /* Header */
+        header{
+            display:grid; gap:14px; grid-template-columns: 1fr; align-items:center;
+            background: linear-gradient(180deg, rgba(77,163,255,.12), rgba(124,245,255,.08));
+            border: 1px solid rgba(255,255,255,.08);
+            padding: 28px; border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        header .top{ display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+        .name{ font-size: clamp(22px, 3vw, 34px); font-weight:800; letter-spacing:.3px; }
+        .role{ color:var(--muted); font-weight:600; }
+        .cta{ display:flex; gap:10px; flex-wrap:wrap; }
+        .btn{
+            appearance:none; border:0; padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; box-shadow: var(--shadow);
+            transition: transform .08s ease, box-shadow .2s ease, filter .2s ease; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+        }
+        .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+        .btn.secondary{ background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.18); }
+
+        /* Layout */
+        .grid{ display:grid; gap:18px; grid-template-columns: 1fr; margin-top:20px; }
+        @media (min-width: 860px){ .grid{ grid-template-columns: 1.1fr .9fr; } }
+
+        .card{ background:var(--panel); border: 1px solid rgba(255,255,255,.08); padding:18px; border-radius:var(--radius); box-shadow: var(--shadow); }
+        .card h2{ margin:0 0 10px; font-size: clamp(18px, 2.4vw, 24px);}
+        .muted{ color:var(--muted); }
+
+        /* List styles */
+        ul.clean{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+        ul.clean li{ padding:10px 12px; background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:12px; }
+
+        /* Skills table with star ratings */
+        .skills{ width:100%; border-collapse:separate; border-spacing:0 10px; }
+        .skills th, .skills td{ text-align:left; padding:10px 12px; }
+        .skills thead th{ color:var(--muted); font-weight:700; }
+        .skills tbody tr{ background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+        .skills tbody tr td:first-child{ border-radius:12px 0 0 12px; }
+        .skills tbody tr td:last-child{ border-radius:0 12px 12px 0; }
+
+        .stars{ --value:4; --max:5; --size:18px; position:relative; display:inline-block; font-size:var(--size); line-height:1; }
+        .stars::before{ content:"★★★★★"; letter-spacing:2px; background: linear-gradient(90deg, currentColor calc(var(--value)/var(--max)*100%), rgba(255,255,255,.16) 0);
+            -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .level{ font-weight:700; margin-left:6px; color:var(--muted); }
+
+        .badges{ display:flex; gap:8px; flex-wrap:wrap; }
+        .badge{ padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); font-size:13px; }
+
+        /* Pros/Cons */
+        .proscons{ display:grid; gap:14px; grid-template-columns:1fr; }
+        @media (min-width:720px){ .proscons{ grid-template-columns:1fr 1fr; } }
+        .proscons .pro{ border-left:4px solid var(--ok); }
+        .proscons .con{ border-left:4px solid var(--warn); }
+
+        /* Footer */
+        footer{ margin:24px 0 10px; color:var(--muted); text-align:center; font-size:14px; }
+
+        /* Print */
+        @media print{
+            body{ background:white; color:#000; }
+            header, .card{ box-shadow:none; border:1px solid #e5e7eb; }
+            .btn{ display:none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="top">
+            <div>
+                <div class="name">Salimonu Daniel</div>
+                <div class="role">Microsoft Word Student Trainer • Beginner & Intermediate</div>
+            </div>
+            <div class="cta">
+                <a class="btn" href="https://wa.me/2349066585997" target="_blank" rel="noopener">Contact on WhatsApp</a>
+                <a class="btn secondary" href="mailto:olaoluwaraymonddaniel@gmail.com">olaoluwarayonddaniel@example.com</a>
+            </div>
+        </div>
+        <div class="badges">
+            <span class="badge">Flexible schedule</span>
+            <span class="badge">Hands‑on lessons</span>
+            <span class="badge">Parent updates</span>
+            <span class="badge">Affordable rates</span>
+        </div>
+    </header>
+
+    <section class="grid">
+        <article class="card">
+            <h2>Why Learn from Me</h2>
+            <p class="muted">I teach Microsoft Word with practical, step‑by‑step guidance designed for students. Lessons focus on real school tasks: assignments, reports, cover pages, tables, and clean formatting. I keep sessions simple, friendly, and results‑driven so learners quickly build confidence and independence.</p>
+            <ul class="clean">
+                <li>Clear explanations without jargon</li>
+                <li>Every lesson includes hands‑on exercises and a mini project</li>
+                <li>Adapted pace for each learner; no one is left behind</li>
+                <li>Parents receive brief progress updates after milestones</li>
+            </ul>
+        </article>
+
+        <aside class="card">
+            <h2>Education</h2>
+            <p><strong>Senior Secondary School 1 (SS1)</strong> – Bright Scholars Schools, Maraba Lokotiye<br/>
+                <span class="muted">2024 – Present</span></p>
+            <ul class="clean">
+                <li>Relevant Subjects: Computer Studies, English, Mathematics, Sciences</li>
+                <li>Notable: Prepared professional class project documents using MS Word (styles, headers/footers, tables)</li>
+            </ul>
+            <h2 style="margin-top:16px;">Languages</h2>
+            <ul class="clean">
+                <li>English – Fluent</li>
+                <li>[Add another language if applicable]</li>
+            </ul>
+        </aside>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+        <h2>Skills</h2>
+        <table class="skills" aria-label="Skills with proficiency levels">
+            <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Proficiency</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Microsoft Word (Core)</td>
+                <td>
+                    <span class="stars" style="--value:4"></span>
+                    <span class="level">Experienced</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Document Formatting & Page Layout</td>
+                <td>
+                    <span class="stars" style="--value:4"></span>
+                    <span class="level">Experienced</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Teaching & Communication (Beginner‑friendly)</td>
+                <td>
+                    <span class="stars" style="--value:5"></span>
+                    <span class="level">Expert</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Patience with Young Learners</td>
+                <td>
+                    <span class="stars" style="--value:5"></span>
+                    <span class="level">Expert</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Time Management & Lesson Planning</td>
+                <td>
+                    <span class="stars" style="--value:4"></span>
+                    <span class="level">Experienced</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Problem‑Solving (Formatting Issues)</td>
+                <td>
+                    <span class="stars" style="--value:5"></span>
+                    <span class="level">Expert</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+        <h2>Pros & Cons (Transparency)</h2>
+        <div class="proscons">
+            <div class="card pro">
+                <ul class="clean">
+                    <li>Hands‑on, practical lessons with mini projects</li>
+                    <li>Patient, step‑by‑step guidance for beginners</li>
+                    <li>Flexible scheduling and affordable rates</li>
+                    <li>Progress summaries for parents/guardians</li>
+                </ul>
+            </div>
+            <div class="card con">
+                <ul class="clean">
+                    <li>Student trainer (SS1) – availability reduces during exams</li>
+                    <li>Focus is on beginner to intermediate Word (not advanced corporate automation)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+        <h2>Lesson Outline (What You’ll Learn)</h2>
+        <ul class="clean">
+            <li>Clean formatting: fonts, spacing, margins, and alignment</li>
+            <li>Headings, styles, headers/footers, and page numbers</li>
+            <li>Tables, images, SmartArt, and simple charts</li>
+            <li>Cover pages and assignment templates you can reuse</li>
+        </ul>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+        <h2>Contact & Booking</h2>
+        <p>Ready to start or have questions? Reach out below. I reply quickly during the holiday period.</p>
+        <div class="cta">
+            <a class="btn" href="https://wa.me/2349066585997" target="_blank" rel="noopener">WhatsApp Me</a>
+            <a class="btn secondary" href="mailto:olaoluwaraymonddaniel@gmail.com">Email: olaoluwaraymonddaniel@gmail.com</a>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="y"></span> [Your Full Name]. Student Trainer – Microsoft Word.
+    </footer>
+</div>
+
+<script>
+    // Auto year
+    document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
